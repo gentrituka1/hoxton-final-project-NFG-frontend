@@ -1,25 +1,53 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { Button, StyleSheet, Text, View } from 'react-native';
+import Header from './components/Header';
+import Navbar from './components/Navbar';
+
+export type Navbar = {
+  id: number;
+  name: string;
+}
+
+export const navbar = [
+  {
+    id: 1,
+    name: 'News',
+  },
+  {
+    id: 2,
+    name: 'Matches',
+  },
+  {
+    id: 3,
+    name: 'Events',
+  },
+  {
+    id: 4,
+    name: 'Teams',
+  },
+  {
+    id: 5,
+    name: 'Settings',
+  }
+]
+
 
 
 export default function App() {
+
   return (
     <View style={styles.container}>
-      <Text style={styles.project}>This is my first Project!</Text>
-      <StatusBar style="auto" />
+      <Header />
+      <Navbar navbar={navbar}/>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  project: {
-    color: 'blue',
-    fontSize: 30,
+    flexDirection: 'row',
+    height: "100%",
+    width: "100%",
   }
 });
