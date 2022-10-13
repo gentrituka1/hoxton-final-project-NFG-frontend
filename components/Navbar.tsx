@@ -3,28 +3,32 @@ import { Button, View, StyleSheet } from "react-native";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-const navigation = useNavigation();
 
-export default function NavBar({}) {
+
+export default function NavBar() {
+
+  const navigation = useNavigation();
+
   return (
     <View style={styles.nav}>
       <Button
         title={"News"}
         onPress={() => {
-          navigation.navigate("News", {});
+          console.log("News")
+          navigation.navigate("News");
         }}
       />
       <Button title={"Matches"} onPress={() => {
-          navigation.navigate("Matches". {});
+          navigation.navigate("Matches");
       }} />
       <Button title={"Events"} onPress={() => {
-          navigation.navigate("Events", {});
+          navigation.navigate("Events");
       }}/>
       <Button title={"Teams"} onPress={() => {
-          navigation.navigate("Teams", {});
+          navigation.navigate("Teams");
       }}/>
       <Button title={"Settings"} onPress={() => {
-          navigation.navigate("Settings", {});
+          navigation.navigate("Settings");
       }}/>
     </View>
   );
@@ -36,10 +40,9 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: "lightblue",
     justifyContent: "space-between",
-    alignSelf: "flex-end",
     width: "100%",
     borderTopWidth: 1,
     borderTopColor: "black",
-    alignItems: "flex-end",
+    alignItems: "flex-end"
   },
 });

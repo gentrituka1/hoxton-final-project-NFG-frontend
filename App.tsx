@@ -1,4 +1,4 @@
-import { NavigationContainer, StackActions, useNavigation } from '@react-navigation/native';
+import { NavigationContainer, StackActions, StackRouter, useNavigation } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
@@ -22,15 +22,17 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Header />
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name="News" component={News} />
-          <Stack.Screen name="Matches" component={Matches} />
-          <Stack.Screen name="Events" component={Events} />
-          <Stack.Screen name="Teams" component={Teams} />
-          <Stack.Screen name="Settings" component={Settings} />
-        </Stack.Navigator>
+        <Header />
+          <Stack.Navigator initialRouteName="News">
+            <Stack.Screen name="News" component={News} options={{header: () => <View>
+              <Text>News</Text>
+            </View>}}/>
+            <Stack.Screen name="Matches" component={Matches} />
+            <Stack.Screen name="Events" component={Events} />
+            <Stack.Screen name="Teams" component={Teams} />
+            <Stack.Screen name="Settings" component={Settings} />
+          </Stack.Navigator>
         <NavBar />
       </NavigationContainer>
     </View>
@@ -39,7 +41,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     height: "100%",
     width: "100%",
   }
