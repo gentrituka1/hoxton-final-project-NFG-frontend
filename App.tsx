@@ -11,33 +11,7 @@ import News from './screens/News';
 import Settings from './screens/Settings';
 import Teams from './screens/Teams';
 
-export type Navbar = {
-  id: number;
-  name: string;
-}
 
-export const navbar = [
-  {
-    id: 1,
-    name: 'News',
-  },
-  {
-    id: 2,
-    name: 'Matches',
-  },
-  {
-    id: 3,
-    name: 'Events',
-  },
-  {
-    id: 4,
-    name: 'Teams',
-  },
-  {
-    id: 5,
-    name: 'Settings',
-  }
-]
 
 const Stack = createNativeStackNavigator();
 
@@ -57,7 +31,7 @@ export default function App() {
           <Stack.Screen name="Settings" component={Settings} />
         </Stack.Navigator>
       </NavigationContainer>
-      <NavBar navbar={navbar}/>
+      <NavBar/>
     </View>
   );
 }
