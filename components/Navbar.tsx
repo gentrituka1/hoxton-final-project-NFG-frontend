@@ -6,7 +6,7 @@ type Props = {
     navbar: Navbar[]
 }
 
-export default function Navbar( {navbar}: Props) {
+export default function NavBar( {navbar}: Props) {
   return (
     <View style={styles.nav}>
         {navbar.map((item) => {
@@ -24,7 +24,10 @@ const styles = StyleSheet.create({
       padding: 10,
       backgroundColor: 'lightblue',
       justifyContent: 'space-between',
+      alignSelf: 'flex-end',
       width: '100%',
+      borderTopWidth: 1,
+      borderTopColor: 'black',
       alignItems: 'flex-end'
     },
   });
