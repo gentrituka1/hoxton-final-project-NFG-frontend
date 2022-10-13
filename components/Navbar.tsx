@@ -1,23 +1,31 @@
 import React from "react";
 import { Button, View, StyleSheet } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-const navigation = createNativeStackNavigator();
+const navigation = useNavigation();
 
-export default function NavBar() {
+export default function NavBar({}) {
   return (
     <View style={styles.nav}>
       <Button
         title={"News"}
         onPress={() => {
-          navigation.navigate("News");
+          navigation.navigate("News", {});
         }}
       />
-      <Button title={"Matches"} />
-      <Button title={"Events"} />
-      <Button title={"Teams"} />
-      <Button title={"Settings"} />
+      <Button title={"Matches"} onPress={() => {
+          navigation.navigate("Matches". {});
+      }} />
+      <Button title={"Events"} onPress={() => {
+          navigation.navigate("Events", {});
+      }}/>
+      <Button title={"Teams"} onPress={() => {
+          navigation.navigate("Teams", {});
+      }}/>
+      <Button title={"Settings"} onPress={() => {
+          navigation.navigate("Settings", {});
+      }}/>
     </View>
   );
 }

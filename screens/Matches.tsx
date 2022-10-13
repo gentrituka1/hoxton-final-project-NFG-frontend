@@ -1,7 +1,10 @@
 import React from 'react'
+import { View, Text } from 'react-native'
 
 export default function Matches() {
   return (
-    <div>Matches</div>
+    <View>
+      <Text>News</Text>
+    </View>
   )
 }
