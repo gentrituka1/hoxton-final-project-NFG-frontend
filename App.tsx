@@ -12,7 +12,7 @@ import Players from "./screens/Players";
 import Matches from "./screens/Matches";
 import News from "./screens/News";
 import Settings from "./screens/Settings";
-import Teams from "./screens/Teams";
+import Ranking from "./screens/Ranking";
 
 const Stack = createNativeStackNavigator();
 const color = "white"
@@ -53,7 +53,7 @@ export default function App() {
               header: () => (
                 <>
                   <View style={styles.header}>
-                    <Text style={styles.headerText}>Match</Text>
+                    <Text style={styles.headerText}>Upcoming Matches</Text>
                     <TextInput style={styles.input} placeholder="Search..." placeholderTextColor={color} />
                   </View>
                 </>
@@ -75,13 +75,13 @@ export default function App() {
             }}
           />
           <Stack.Screen
-            name="Teams"
-            component={Teams}
+            name="Ranking"
+            component={Ranking}
             options={{
               header: () => (
                 <>
                   <View style={styles.header}>
-                    <Text style={styles.headerText}>Teams</Text>
+                    <Text style={styles.headerText}>Ranking</Text>
                     <TextInput style={styles.input} placeholder="Search..."  placeholderTextColor={color}/>
                   </View>
                 </>
@@ -129,10 +129,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#1f252c",
   },
   headerText: {
-    fontSize: 25,
+    fontSize: 22,
     fontWeight: "bold",
-    color: "white",
-    
+    color: "lightblue",
+    fontStyle: "italic"
   },
   input: {
     height: 30,

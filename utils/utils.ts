@@ -33,3 +33,21 @@ export function timeElapsed(time: string){
       else return `${years} years ago`;
     }
   }
+
+export function timeConverter(time: string){
+    const newsTime = new Date(time);
+    const hours = newsTime.getHours();
+    const minutes = newsTime.getMinutes();
+    if(hours < 10 && minutes < 10) return `0${hours}:0${minutes}`;
+    else if(hours < 10) return `0${hours}:${minutes}`;
+    else if(minutes < 10) return `${hours}:0${minutes}`;
+    else return `${hours}:${minutes}`;
+}
+
+export function checkTimeIfToday(time: string){
+    const matchTime = new Date(time);
+    const currentTime = new Date();
+    if(matchTime.getDate() === currentTime.getDate() && matchTime.getMonth() === currentTime.getMonth() && matchTime.getFullYear() === currentTime.getFullYear()) return `Today`;
+    else if(matchTime.getDate() === currentTime.getDate() + 1 && matchTime.getMonth() === currentTime.getMonth() && matchTime.getFullYear() === currentTime.getFullYear()) return `Tomorrow`;
+    else return `${matchTime.getDate()}/${matchTime.getMonth() + 1}/${matchTime.getFullYear()}`;
+}

@@ -27,10 +27,10 @@ export default function NavBar() {
       />
       <Button
         color={color}
-        title={"Teams"}
+        title={"Ranking"}
         onPress={() => {
           //@ts-ignore
-          navigation.navigate("Teams");
+          navigation.navigate("Ranking");
         }}
       />
       <Button
