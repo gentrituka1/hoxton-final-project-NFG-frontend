@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
 import Team from '../components/Team'
 
-type Player = {
-  fullName: string
+export type PlayerType = {
+  fullname: string
   image: string
-  nickName: string
+  nickname: string
   country: {
     name: string
     flag: string
   }
 }
 
-type Team = {
+export type TeamType = {
   id: number
   ranking: number
   name: string
   logo: string
-  players: Player[]
+  players: PlayerType[]
 }
 
 export default function Ranking() {
-  const [topTeams, setTopTeams] = useState<Team[]>([]);
+  const [topTeams, setTopTeams] = useState<TeamType[]>([]);
 
   useEffect(() => {
     fetch(`http://10.0.2.2:4001/teams`)
@@ -32,10 +32,10 @@ export default function Ranking() {
   }, [])
 
   return (
-    <View>
+    <ScrollView>
       {topTeams.map((team) => (
         <Team key={team.id} team={team} />
       ))}
-    </View>
+    </ScrollView>
   )
 }
