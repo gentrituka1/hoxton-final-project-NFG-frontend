@@ -26,16 +26,16 @@ export default function NavBar() {
       />
       <Button
         color={color}
-        title={"Events"}
+        title={"Teams"}
         onPress={() => {
-          navigation.navigate("Events");
+          navigation.navigate("Teams");
         }}
       />
       <Button
         color={color}
-        title={"Teams"}
+        title={"Players"}
         onPress={() => {
-          navigation.navigate("Teams");
+          navigation.navigate("Players");
         }}
       />
       <Button

@@ -8,7 +8,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React, { useState } from "react";
 import { Button, StatusBar, StyleSheet, Text, TextInput, View } from "react-native";
 import NavBar from "./components/NavBar";
-import Events from "./screens/Events";
+import Players from "./screens/Players";
 import Matches from "./screens/Matches";
 import News from "./screens/News";
 import Settings from "./screens/Settings";
@@ -27,6 +27,7 @@ export default function App() {
         animated={true}
         hidden={hidden}
         backgroundColor="#1f252c"
+        showHideTransition={"slide"}
         
       />
       <NavigationContainer>
@@ -60,13 +61,13 @@ export default function App() {
             }}
           />
           <Stack.Screen
-            name="Events"
-            component={Events}
+            name="Players"
+            component={Players}
             options={{
               header: () => (
                 <>
                   <View style={styles.header}>
-                    <Text style={styles.headerText}>Events</Text>
+                    <Text style={styles.headerText}>Players</Text>
                     <TextInput style={styles.input} placeholder="Search..." placeholderTextColor={color} />
                   </View>
                 </>
@@ -95,10 +96,10 @@ export default function App() {
                 <>
                   <View style={styles.header}>
                     <Text style={styles.headerText}>Settings</Text>
-                    <TextInput style={styles.input} placeholder="Search..." placeholderTextColor={color} />
-                    <Button title="Hide/Show" color="#841584" onPress={() => {
+                    <Button title="Hide/Show" color="#1f252c" onPress={() => {
                       setHidden(!hidden);
                     }}/>
+                    <TextInput style={styles.input} placeholder="Search..." placeholderTextColor={color} />
                   </View>
                 </>
               ),
