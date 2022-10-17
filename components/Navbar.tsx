@@ -13,7 +13,7 @@ export default function NavBar() {
         color={color}
         title={"News"}
         onPress={() => {
-          console.log("News");
+          //@ts-ignore
           navigation.navigate("News");
         }}
       />
@@ -21,6 +21,7 @@ export default function NavBar() {
         color={color}
         title={"Matches"}
         onPress={() => {
+          //@ts-ignore
           navigation.navigate("Matches");
         }}
       />
@@ -28,6 +29,7 @@ export default function NavBar() {
         color={color}
         title={"Teams"}
         onPress={() => {
+          //@ts-ignore
           navigation.navigate("Teams");
         }}
       />
@@ -35,6 +37,7 @@ export default function NavBar() {
         color={color}
         title={"Players"}
         onPress={() => {
+          //@ts-ignore
           navigation.navigate("Players");
         }}
       />
@@ -42,6 +45,7 @@ export default function NavBar() {
         color={color}
         title={"Settings"}
         onPress={() => {
+          //@ts-ignore
           navigation.navigate("Settings");
         }}
       />
