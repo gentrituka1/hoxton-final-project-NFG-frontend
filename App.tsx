@@ -7,7 +7,6 @@ import {
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React, { useState } from "react";
 import { Button, StatusBar, StyleSheet, Text, TextInput, View } from "react-native";
-import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import Events from "./screens/Events";
 import Matches from "./screens/Matches";
@@ -16,6 +15,7 @@ import Settings from "./screens/Settings";
 import Teams from "./screens/Teams";
 
 const Stack = createNativeStackNavigator();
+const color = "white"
 
 export default function App() {
   const [search, setSearch] = useState("");
@@ -26,9 +26,10 @@ export default function App() {
       <StatusBar 
         animated={true}
         hidden={hidden}
+        backgroundColor="#1f252c"
+        
       />
       <NavigationContainer>
-        <Header />
         <Stack.Navigator initialRouteName="News">
           <Stack.Screen
             name="News"
@@ -38,7 +39,7 @@ export default function App() {
                 <>
                   <View style={styles.header}>
                     <Text style={styles.headerText}>News</Text>
-                    <TextInput style={styles.input} placeholder="Search..." />
+                    <TextInput style={styles.input} placeholder="Search..." placeholderTextColor={color} />
                   </View>
                 </>
               ),
@@ -52,7 +53,7 @@ export default function App() {
                 <>
                   <View style={styles.header}>
                     <Text style={styles.headerText}>Match</Text>
-                    <TextInput style={styles.input} placeholder="Search..." />
+                    <TextInput style={styles.input} placeholder="Search..." placeholderTextColor={color} />
                   </View>
                 </>
               ),
@@ -66,7 +67,7 @@ export default function App() {
                 <>
                   <View style={styles.header}>
                     <Text style={styles.headerText}>Events</Text>
-                    <TextInput style={styles.input} placeholder="Search..." />
+                    <TextInput style={styles.input} placeholder="Search..." placeholderTextColor={color} />
                   </View>
                 </>
               ),
@@ -80,7 +81,7 @@ export default function App() {
                 <>
                   <View style={styles.header}>
                     <Text style={styles.headerText}>Teams</Text>
-                    <TextInput style={styles.input} placeholder="Search..." />
+                    <TextInput style={styles.input} placeholder="Search..."  placeholderTextColor={color}/>
                   </View>
                 </>
               ),
@@ -94,7 +95,7 @@ export default function App() {
                 <>
                   <View style={styles.header}>
                     <Text style={styles.headerText}>Settings</Text>
-                    <TextInput style={styles.input} placeholder="Search..." />
+                    <TextInput style={styles.input} placeholder="Search..." placeholderTextColor={color} />
                     <Button title="Hide/Show" color="#841584" onPress={() => {
                       setHidden(!hidden);
                     }}/>
@@ -137,6 +138,7 @@ const styles = StyleSheet.create({
     width: 180,
     borderWidth: 1,
     borderColor: "white",
+    color: "white",
     paddingLeft: 10,
   },
 });
