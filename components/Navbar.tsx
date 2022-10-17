@@ -38,11 +38,12 @@ const styles = StyleSheet.create({
   nav: {
     flexDirection: "row",
     padding: 10,
-    backgroundColor: "lightblue",
+    backgroundColor: "#1f252c",
     justifyContent: "space-between",
     width: "100%",
     borderTopWidth: 1,
     borderTopColor: "black",
-    alignItems: "flex-end"
+    alignItems: "flex-end",
+    
   },
 });

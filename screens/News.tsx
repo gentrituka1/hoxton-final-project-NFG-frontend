@@ -1,39 +1,35 @@
-import React, { useEffect, useState } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
-import SingleNews from '../components/SingleNews';
+import React, { useEffect, useState } from "react";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
+import SingleNews from "../components/SingleNews";
 
-type SingleNews = {
+type SingleNewsType = {
   id: number;
   title: string;
   description: string;
-  link: string;
   time: string;
-}
+};
 
 export default function News() {
-  const [news, setNews] = useState<SingleNews[]>([]);
+  const [news, setNews] = useState<SingleNewsType[]>([]);
 
   useEffect(() => {
-    fetch(`http://localhost:4001/news`)
+    fetch(`http://10.0.2.2:4001/news`)
     .then(res => res.json())
-    .then(newsFromServer => setNews(newsFromServer))
-    .catch((err) => alert(["Error: " + err.message]))
+    .then(newsFromServer => {
+      setNews(newsFromServer)})
   }, [])
 
   return (
-    <View style={styles.container}>
-      <Text>Something</Text>
+    <ScrollView>
       {news.map((item) => (
-        <SingleNews item={item}/>
+        <>
+          <SingleNews key={item.id} item={item} />
+        </>
       ))}
-    </View>
-  )
+    </ScrollView>
+  );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 0.2,
-    backgroundColor: 'blue',
-    alignItems: 'center',
-  }
-})
+  
+});

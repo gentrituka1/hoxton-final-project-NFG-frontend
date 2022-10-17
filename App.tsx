@@ -115,25 +115,28 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     height: "100%",
     width: "100%",
+    backgroundColor: "#1f252c"
   },
   header: {
     padding: 10,
+    paddingBottom: 20,
     width: "100%",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    backgroundColor: "lightblue",
+    backgroundColor: "#1f252c",
   },
   headerText: {
-    fontSize: 20,
+    fontSize: 25,
     fontWeight: "bold",
-    color: "#841584",
+    color: "white",
+    
   },
   input: {
     height: 30,
     width: 180,
     borderWidth: 1,
-    borderColor: "#841584",
+    borderColor: "white",
     paddingLeft: 10,
   },
 });
