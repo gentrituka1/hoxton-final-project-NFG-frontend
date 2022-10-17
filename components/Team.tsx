@@ -32,13 +32,13 @@ const styles = StyleSheet.create({
     },
     teamContainer: {
         flexDirection: 'row',
-        backgroundColor: "lightblue",
+        backgroundColor: "#252d3a60",
         padding: 15
     },
     image: {
-        width: 20,
-        height: 20,
-        marginLeft: 5
+        width: 25,
+        height: 25,
+        marginLeft: 10
     },
     playersContainer: {
         flexDirection: 'row',
@@ -61,8 +61,9 @@ const styles = StyleSheet.create({
         fontSize: 17
     },
     text: {
-        fontSize: 15,
+        fontSize: 17,
         paddingLeft: 5,
-        color: "white"
+        color: "white",
+        fontWeight: "bold"
     }
 })
