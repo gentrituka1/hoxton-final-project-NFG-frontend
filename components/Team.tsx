@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image } from 'react-native'
-import { PlayerType, TeamType } from '../screens/Ranking'
+import { TeamPlayerType, TeamType } from '../screens/Ranking'
 
 type Props = {
     team: TeamType
@@ -15,7 +15,7 @@ export default function Team({ team }: Props) {
             <Text style={styles.text}>{team.name}</Text>
         </View>
         <View style={styles.playersContainer}>
-            {team.players.map((player: PlayerType) => (
+            {team.players.map((player: TeamPlayerType) => (
                 <View style={styles.playersDiv}>
                     <Image style={styles.playersImage} source={{uri: player.image}} />
                     <Text style={styles.playersName}>{player.nickname}</Text>

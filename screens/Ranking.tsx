@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { View, Text, ScrollView } from 'react-native'
 import Team from '../components/Team'
 
-export type PlayerType = {
+export type TeamPlayerType = {
   fullname: string
   image: string
   nickname: string
@@ -17,7 +17,7 @@ export type TeamType = {
   ranking: number
   name: string
   logo: string
-  players: PlayerType[]
+  players: TeamPlayerType[]
 }
 
 export default function Ranking() {
