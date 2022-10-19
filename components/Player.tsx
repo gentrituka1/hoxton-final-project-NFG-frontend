@@ -5,16 +5,15 @@ import { TeamPlayerType } from '../screens/Ranking'
 
 type Props = {
     player: PlayerType
-    teamPlayer: TeamPlayerType
+    teamPlayers: TeamPlayerType[]
 }
 
-export default function Player({ player, teamPlayer }: Props) {
+export default function Player({ player, teamPlayers }: Props) {
+
+    const playerTeam = teamPlayers.find((teamPlayer) => teamPlayer.nickname === player.nickname)
   return (
     <View key={player.id}>
-            {teamPlayer.nickname === player.nickname ? 
-            <Image source={{ uri: teamPlayer.image }} style={{ width: 50, height: 50 }} />
-            : null
-            }
+            {playerTeam && <Image source={{ uri: playerTeam.image }} style={{ width: 50, height: 50 }} />}
             <View>
               <Text>{player.nickname}</Text>
               <Text>{player.team}</Text>

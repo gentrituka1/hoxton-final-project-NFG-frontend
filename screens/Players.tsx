@@ -14,7 +14,9 @@ export type PlayerType = {
 
 export default function Players() {
   const [players, setPlayers] = useState<PlayerType[]>([]);
-  const [teamPlayer, setTeamPlayer] = useState<TeamPlayerType[]>([]);
+  const [teamPlayers, setTeamPlayers] = useState<TeamPlayerType[]>([]);
+
+  
 
   useEffect(() => {
     fetch(`http://10.0.2.2:4001/players`)
@@ -27,8 +29,8 @@ export default function Players() {
   useEffect(() => {
     fetch(`http://10.0.2.2:4001/teams`)
     .then((res) => res.json())
-    .then((data) => {
-      setTeamPlayer(data.players)
+    .then((teamsFromServer) => {
+      setTeamPlayers(teamsFromServer.players)
     })
   }, [])
 
@@ -39,7 +41,7 @@ export default function Players() {
       </View>
       <View>
         {players.map((player) => (
-            <Player player={player} teamPlayer={teamPlayer}/>
+            <Player player={player} teamPlayers={teamPlayers}/>
         ))}
       </View>
     </ScrollView>
