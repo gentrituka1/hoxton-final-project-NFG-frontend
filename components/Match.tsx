@@ -1,8 +1,10 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import { checkTimeIfToday, timeConverter, timeElapsed } from "../utils/utils";
+import ReusableSpinnyBoi from "./ReusableSpinnyBoi";
 
 export default function Match({ match }: any) {
+
   return (
     <View style={styles.container}>
       <View style={styles.singleContainer}>

@@ -50,4 +50,4 @@ export function checkTimeIfToday(time: string){
     if(matchTime.getDate() === currentTime.getDate() && matchTime.getMonth() === currentTime.getMonth() && matchTime.getFullYear() === currentTime.getFullYear()) return `Today`;
     else if(matchTime.getDate() === currentTime.getDate() + 1 && matchTime.getMonth() === currentTime.getMonth() && matchTime.getFullYear() === currentTime.getFullYear()) return `Tomorrow`;
     else return `${matchTime.getDate()}/${matchTime.getMonth() + 1}/${matchTime.getFullYear()}`;
-}
+  }

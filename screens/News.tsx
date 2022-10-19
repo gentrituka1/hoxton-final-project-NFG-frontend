@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
+import ReusableSpinnyBoi from "../components/ReusableSpinnyBoi";
 import SingleNews from "../components/SingleNews";
 
 type SingleNewsType = {
@@ -18,6 +19,10 @@ export default function News() {
     .then(newsFromServer => {
       setNews(newsFromServer)})
   }, [])
+
+  if(news.length === 0) {
+    return <ReusableSpinnyBoi text="news"/>
+  }
 
   return (
     <ScrollView>

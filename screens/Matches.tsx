@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { View, Text, ScrollView } from 'react-native'
 import Match from '../components/Match'
+import ReusableSpinnyBoi from '../components/ReusableSpinnyBoi'
 
 export type MatchType = {
   id: number
@@ -26,6 +27,10 @@ export default function Matches() {
     .then(res => res.json())
     .then(data => setMatches(data))
   }, [])
+
+  if(matches.length === 0) {
+    return <ReusableSpinnyBoi text="matches"/>
+  }
 
   return (
     <ScrollView>

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { View, Text, ScrollView } from 'react-native'
+import ReusableSpinnyBoi from '../components/ReusableSpinnyBoi'
 import Team from '../components/Team'
 
 export type TeamPlayerType = {
@@ -30,6 +31,10 @@ export default function Ranking() {
         setTopTeams(data);
       })
   }, [])
+
+  if(topTeams.length === 0) {
+    return <ReusableSpinnyBoi text="teams"/>
+  }
 
   return (
     <ScrollView>
