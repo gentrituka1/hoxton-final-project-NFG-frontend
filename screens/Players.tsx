@@ -30,9 +30,11 @@ export default function Players() {
     fetch(`http://10.0.2.2:4001/teams`)
     .then((res) => res.json())
     .then((teamsFromServer) => {
-      setTeamPlayers(teamsFromServer.players)
+      setTeamPlayers(teamsFromServer.map((team: any) => team.players).flat())
     })
   }, [])
+
+  console.log(teamPlayers)
 
   return (
     <ScrollView>
@@ -41,7 +43,7 @@ export default function Players() {
       </View>
       <View>
         {players.map((player) => (
-            <Player player={player} teamPlayers={teamPlayers}/>
+            <Player key={player.id} player={player} teamPlayers={teamPlayers}/>
         ))}
       </View>
     </ScrollView>

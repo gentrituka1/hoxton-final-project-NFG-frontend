@@ -22,9 +22,7 @@ export default function News() {
   return (
     <ScrollView>
       {news.map((item) => (
-        <>
-          <SingleNews item={item} />
-        </>
+        <SingleNews key={item.id} item={item} />
       ))}
     </ScrollView>
   );

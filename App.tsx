@@ -6,7 +6,7 @@ import {
 } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React, { useState } from "react";
-import { Button, StatusBar, StyleSheet, Text, TextInput, View } from "react-native";
+import { Button, StatusBar, StyleSheet, Text, TextInput, View, Image } from "react-native";
 import NavBar from "./components/NavBar";
 import Players from "./screens/Players";
 import Matches from "./screens/Matches";
@@ -68,7 +68,7 @@ export default function App() {
                 <>
                   <View style={styles.header}>
                     <Text style={styles.headerText}>Players</Text>
-                    <TextInput style={styles.input} placeholder="Search..." placeholderTextColor={color} />
+                    <Image  source={require("./assets/search.png")} style={{width: 25, height: 25}}/>
                   </View>
                 </>
               ),
