@@ -7,7 +7,6 @@ import { TeamPlayerType } from './Ranking'
 
 
 export default function SearchPlayers() {
-
   const [players, setPlayers] = React.useState<PlayerType[]>([])
   const [teamPlayers, setTeamPlayers] = React.useState<TeamPlayerType[]>([])
 
@@ -26,6 +25,8 @@ export default function SearchPlayers() {
       setTeamPlayers(teamsFromServer.map((team: any) => team.players).flat())
     })
   }, [])
+
+  
 
   if (players.length === 0) {
     return (

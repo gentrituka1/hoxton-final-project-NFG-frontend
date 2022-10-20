@@ -58,6 +58,7 @@ export default function StackNavigator({
                 <View style={{flexDirection: "row", alignItems: "center", justifyContent: "space-between"}}>
                   <TouchableHighlight
                     onPress={() => {
+                      // @ts-ignore
                       navigation.navigate("News");
                     }}
                   >
@@ -87,6 +88,7 @@ export default function StackNavigator({
                 <Text style={styles.headerText}>News</Text>
                 <TouchableHighlight
                   onPress={() => {
+                    // @ts-ignore
                     navigation.navigate("Search");
                   }}
                 >
@@ -110,6 +112,7 @@ export default function StackNavigator({
                 <Text style={styles.headerText}>Upcoming Matches</Text>
                 <TouchableHighlight
                   onPress={() => {
+                    // @ts-ignore
                     navigation.navigate("Search");
                   }}
                 >
@@ -133,6 +136,7 @@ export default function StackNavigator({
                 <Text style={styles.headerText}>Players</Text>
                 <TouchableHighlight
                   onPress={() => {
+                    // @ts-ignore
                     navigation.navigate("Search");
                   }}
                 >
@@ -156,6 +160,7 @@ export default function StackNavigator({
                 <Text style={styles.headerText}>Ranking</Text>
                 <TouchableHighlight
                   onPress={() => {
+                    // @ts-ignore
                     navigation.navigate("Search");
                   }}
                 >
@@ -171,19 +176,23 @@ export default function StackNavigator({
       />
       <Stack.Screen
         name="Settings"
-        component={Settings}
+        children={() => <Settings hidden={hidden} setHidden={setHidden} />}
         options={{
           header: () => (
             <>
               <View style={styles.header}>
                 <Text style={styles.headerText}>Settings</Text>
-                <Button
-                  title="Hide/Show"
-                  color="#1f252c"
+                <TouchableHighlight
                   onPress={() => {
-                    setHidden(!hidden);
+                    // @ts-ignore
+                    navigation.navigate("Search");
                   }}
-                />
+                >
+                  <Image
+                    source={require("../assets/search.png")}
+                    style={{ width: 25, height: 25 }}
+                  />
+                </TouchableHighlight>
               </View>
             </>
           ),

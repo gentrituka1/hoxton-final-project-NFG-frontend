@@ -41,8 +41,8 @@ export default function Players() {
 
   return (
     <ScrollView>
-      <View>
-        <Text>Top Players</Text>
+      <View style={{padding: 7, backgroundColor: "#435971"}}>
+        <Text style={{color: "white", fontWeight: "bold"}}>Top Players</Text>
       </View>
       <View>
         {players.map((player) => (

@@ -15,20 +15,12 @@ export default function SearchTeams() {
   return (
     <ScrollView>
         <View>
-            <Text style={{padding: 5, backgroundColor: "#35495ef0", color: "white", fontSize: 12, fontWeight: "bold"}}>Most Popular</Text>
+            <Text style={{padding: 10, backgroundColor: "#35495ef0", color: "white", fontSize: 12, fontWeight: "bold"}}>Most Popular</Text>
         </View>
         <View>
-            {2 % 2 === 0 ? (
-                searchTeams.map((team) => (
-                    <SearchTeam team={team} backgroundColour="#1b1f23"/>
-                ))
-            )
-            :
-            (
-                searchTeams.map((team) => (
-                    <SearchTeam team={team} backgroundColour="#1b1f234f"/>
-                ))
-            )
+         {searchTeams.map((team) => (
+             <SearchTeam team={team} backgroundColour="#3b4d45"/>
+            ))
             }
         </View>
     </ScrollView>

@@ -14,7 +14,6 @@ export default function SearchTeam({ team, backgroundColour }: Props) {
         flexDirection: "row",
         backgroundColor: backgroundColour,
         padding: 10,
-        justifyContent: "space-between",
         borderBottomWidth: 1,
         borderBottomColor: "grey",
       }}
@@ -30,9 +29,10 @@ export default function SearchTeam({ team, backgroundColour }: Props) {
 
       <View
         style={{
-          paddingLeft: 5,
+          paddingLeft: 10,
           flexDirection: "column",
-          justifyContent: "flex-start",
+          justifyContent: "space-evenly",
+          width: "82%"
         }}
       >
         <Text style={{ color: "white", fontWeight: "bold" }}>{team.name}</Text>
@@ -44,11 +44,11 @@ export default function SearchTeam({ team, backgroundColour }: Props) {
           ))}
         </View>
       </View>
-      <View style={{ alignItems: "center" }}>
+      <View style={{ alignItems: "center", justifyContent: "center" }}>
         <Text style={{ color: "white", fontWeight: "bold", fontSize: 15 }}>
           {team.ranking}
         </Text>
-        <Text style={{ color: "grey", fontSize: 10, fontWeight: "bold" }}>
+        <Text style={{ color: "darkgrey", fontSize: 10, fontWeight: "bold" }}>
           Rank
         </Text>
       </View>
@@ -58,11 +58,13 @@ export default function SearchTeam({ team, backgroundColour }: Props) {
 
 const styles = StyleSheet.create({
   image: {
-    width: 30,
-    height: 30,
+    width: 50,
+    height: 50,
+    borderRadius: 30,
+    backgroundColor: "#ffffb0"
   },
   text: {
     fontSize: 12,
-    color: "grey",
+    color: "darkgrey",
   },
 });
