@@ -5,8 +5,11 @@ import SearchPlayer from '../components/SearchPlayer'
 import { PlayerType } from './Players'
 import { TeamPlayerType } from './Ranking'
 
+type Props = {
+    search: string;
+}
 
-export default function SearchPlayers() {
+export default function SearchPlayers( { search }: Props) {
   const [players, setPlayers] = React.useState<PlayerType[]>([])
   const [teamPlayers, setTeamPlayers] = React.useState<TeamPlayerType[]>([])
 
@@ -36,8 +39,8 @@ export default function SearchPlayers() {
 
    
   return (
-    <ScrollView>
-        {players.map((player) => (
+    <ScrollView style={{backgroundColor: "#3b4d45"}}>
+        {players.filter(player => (player.nickname.toLowerCase().includes(search.toLowerCase()) ) || (player.team.toLowerCase().includes(search.toLowerCase()))).map((player) => (
             <SearchPlayer key={player.id} player={player} teamPlayers={teamPlayers}/>
         ))}
     </ScrollView>

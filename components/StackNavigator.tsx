@@ -38,6 +38,8 @@ export default function StackNavigator({
   hidden,
   setHidden,
 }: Props) {
+
+  const [search, setSearch] = useState("");
   
   const navigation = useNavigation();
   const color = "white";
@@ -46,7 +48,7 @@ export default function StackNavigator({
     <Stack.Navigator initialRouteName="News">
       <Stack.Screen
         name="Search"
-        component={Search}
+        children={() => <Search search={search} />}
         options={{
           header: () => (
             <>
@@ -71,6 +73,10 @@ export default function StackNavigator({
                     style={styles.input}
                     placeholder="Search..."
                     placeholderTextColor={color}
+                    onChange={(e) => {
+                      // on change, set the search state to the value of the input
+                      setSearch(e.nativeEvent.text);
+                    }}
                   />
                 </View>
               </View>

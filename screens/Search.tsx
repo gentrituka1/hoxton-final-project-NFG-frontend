@@ -8,14 +8,16 @@ import { PlayerType } from "./Players";
 
 const Tab = createBottomTabNavigator();
 
+type Props = {
+  search: string;
+}
 
-
-export default function Search() {
+export default function Search( { search }: Props) {
   return (
     <Tab.Navigator initialRouteName="TEAMS" screenOptions={{ headerShown: false }}>
       <Tab.Screen
         name="TEAMS"
-        component={SearchTeams}
+        children={() => <SearchTeams search={search}/>}
         options={{
           tabBarHideOnKeyboard: true,
           tabBarActiveBackgroundColor: "#1f252c",
@@ -28,7 +30,7 @@ export default function Search() {
       />
       <Tab.Screen
         name="PLAYERS"
-        component={SearchPlayers}
+        children={() => <SearchPlayers search={search}/>}
         options={{
           tabBarHideOnKeyboard: true,
           tabBarActiveBackgroundColor: "#1f252c",
