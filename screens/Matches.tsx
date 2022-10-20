@@ -35,7 +35,7 @@ export default function Matches() {
   return (
     <ScrollView>
       {matches.map(match => (
-        <Match match={match}/>
+        <Match key={match.id} match={match}/>
       ))}
     </ScrollView>
   )

@@ -21,8 +21,8 @@ export default function Team({ team }: Props) {
         <Text style={styles.text}>{team.name}</Text>
       </View>
       <View style={styles.playersContainer}>
-        {team.players.map((player: TeamPlayerType) => (
-          <View style={styles.playersDiv}>
+        {team.players.map((player: TeamPlayerType, index) => (
+          <View key={index} style={styles.playersDiv}>
             <Image style={styles.playersImage} source={{ uri: player.image }} />
             <Text style={styles.playersName}>{player.nickname}</Text>
           </View>

@@ -1,26 +1,46 @@
-import React from 'react'
-import { View, ScrollView, StyleSheet, Button } from 'react-native'
+import React from "react";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { View, ScrollView, StyleSheet, Button } from "react-native";
+import SearchPlayers from "./SearchPlayers";
+import SearchTeams from "./SearchTeams";
+
+const Tab = createBottomTabNavigator();
 
 export default function Search() {
-
-
-    const color = "#1f252c";
   return (
-    <ScrollView>
-        <View>
-            <Button color={color} title={"Teams"} onPress={() => {
-
-            }}></Button>
-            <Button color={color} title={"Players"} onPress={() => {}}></Button>
-        </View>
-        <View>
-        </View>
-    </ScrollView>
-  )
+    <Tab.Navigator screenOptions={{ headerShown: false }}>
+      <Tab.Screen
+        name="Teams"
+        component={SearchTeams}
+        options={{
+          tabBarHideOnKeyboard: true,
+          tabBarActiveBackgroundColor: "#1f252c",
+          tabBarLabelStyle: { fontSize: 20, fontWeight: "bold" },
+          tabBarActiveTintColor: "white",
+          tabBarInactiveTintColor: "#1f252c",
+          tabBarLabelPosition: "beside-icon",
+          tabBarIconStyle: { display: "none" },
+        }}
+      />
+      <Tab.Screen
+        name="Players"
+        component={SearchPlayers}
+        options={{
+          tabBarHideOnKeyboard: true,
+          tabBarActiveBackgroundColor: "#1f252c",
+          tabBarLabelStyle: { fontSize: 20, fontWeight: "bold", fontFamily: "Roboto" },
+          tabBarActiveTintColor: "white",
+          tabBarInactiveTintColor: "#1f252c",
+          tabBarLabelPosition: "beside-icon",
+          tabBarIconStyle: { display: "none" },
+        }}
+      />
+    </Tab.Navigator>
+  );
 }
 
 const styles = StyleSheet.create({
-    container: {
-
-    },
-})
+  container: {
+    flexDirection: "row",
+  },
+});
