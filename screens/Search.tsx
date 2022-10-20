@@ -10,7 +10,7 @@ export default function Search() {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }}>
       <Tab.Screen
-        name="Teams"
+        name="TEAMS"
         component={SearchTeams}
         options={{
           tabBarHideOnKeyboard: true,
@@ -23,7 +23,7 @@ export default function Search() {
         }}
       />
       <Tab.Screen
-        name="Players"
+        name="PLAYERS"
         component={SearchPlayers}
         options={{
           tabBarHideOnKeyboard: true,

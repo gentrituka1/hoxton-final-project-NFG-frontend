@@ -184,11 +184,6 @@ export default function StackNavigator({
                     setHidden(!hidden);
                   }}
                 />
-                <TextInput
-                  style={styles.input}
-                  placeholder="Search..."
-                  placeholderTextColor={color}
-                />
               </View>
             </>
           ),
