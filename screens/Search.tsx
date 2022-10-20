@@ -3,12 +3,16 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { View, ScrollView, StyleSheet, Button } from "react-native";
 import SearchPlayers from "./SearchPlayers";
 import SearchTeams from "./SearchTeams";
+import { TeamPlayerType } from "./Ranking";
+import { PlayerType } from "./Players";
 
 const Tab = createBottomTabNavigator();
 
+
+
 export default function Search() {
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false }}>
+    <Tab.Navigator initialRouteName="TEAMS" screenOptions={{ headerShown: false }}>
       <Tab.Screen
         name="TEAMS"
         component={SearchTeams}

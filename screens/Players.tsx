@@ -39,8 +39,6 @@ export default function Players() {
    )
   }
 
-  console.log(teamPlayers)
-
   return (
     <ScrollView>
       <View>

@@ -9,9 +9,12 @@ type Props = {
 };
 
 export default function Player({ player, teamPlayers }: Props) {
+
   const playerTeam = teamPlayers.find(
     (teamPlayer) => teamPlayer.nickname === player.nickname
   );
+
+  
   return (
     <View>
       <Image
