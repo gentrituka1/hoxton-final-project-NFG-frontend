@@ -16,6 +16,7 @@ import {
   Image,
   Touchable,
   TouchableHighlight,
+  ImageBackground,
 } from "react-native";
 import NavBar from "../components/NavBar";
 import Players from "../screens/Players";
@@ -26,6 +27,8 @@ import Ranking from "../screens/Ranking";
 import Search from "../screens/Search";
 import SearchTeams from "../screens/SearchTeams";
 import SearchPlayers from "../screens/SearchPlayers";
+import Login from "../screens/Login";
+import Signup from "../screens/Signup";
 
 type Props = {
   hidden: boolean;
@@ -46,6 +49,16 @@ export default function StackNavigator({
 
   return (
     <Stack.Navigator initialRouteName="News">
+      <Stack.Screen 
+      name="Login"
+      component={Login}
+      options={{headerShown: false}}
+      />
+      <Stack.Screen
+      name="Signup"
+      component={Signup}
+      options={{headerShown: false}}
+      />
       <Stack.Screen
         name="Search"
         children={() => <Search search={search} />}
@@ -62,6 +75,7 @@ export default function StackNavigator({
                     onPress={() => {
                       // @ts-ignore
                       navigation.navigate("News");
+                      
                     }}
                   >
                     <Image

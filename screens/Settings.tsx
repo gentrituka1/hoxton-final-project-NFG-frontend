@@ -1,5 +1,7 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import { View, Text, Button, ScrollView, StyleSheet } from "react-native";
+import { auth } from '../firebase'
 
 type Props = {
   hidden: boolean;
@@ -7,6 +9,20 @@ type Props = {
 }
 
 export default function Settings( {hidden, setHidden}: Props) {
+  const navigation = useNavigation();
+
+  function signOut(){
+    auth.signOut().then(() => {
+      console.log('Signed Out')
+      // @ts-ignore
+      navigation.replace('Login')
+    }).catch((error: any) => {
+      console.error(error)
+    })
+  }
+
+  const currentUser = auth.currentUser
+
   return (
     <View style={styles.container}>
       <View>
@@ -20,6 +36,26 @@ export default function Settings( {hidden, setHidden}: Props) {
           setHidden(!hidden);
         }}
       />
+      </View>
+      <View>
+        <Text style={{backgroundColor: "#435971", padding: 10, color: "white", fontWeight: "bold"}}>Welcome {currentUser?.name}</Text>
+      </View>
+      <View style={{backgroundColor: "#1b1f23", justifyContent: "center", alignItems: "center", padding: 15}}>
+        {currentUser === null ? (
+        <Button
+          title="Log In/Sign Up"
+          color="#435971"
+          onPress={() => {
+            // @ts-ignore
+            navigation.navigate("Login");
+          }}
+        /> ) : (
+          <Button
+          title="Sign Out"
+          color="#435971"
+          onPress={signOut}
+        /> 
+        )}
       </View>
     </View>
   );

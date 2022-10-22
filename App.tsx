@@ -18,7 +18,6 @@ import StackNavigator from "./components/StackNavigator";
 
 
 export default function App() {
-  const [search, setSearch] = useState("");
   const [hidden, setHidden] = useState(false);
 
   return (

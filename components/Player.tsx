@@ -35,8 +35,8 @@ export default function Player({ player, teamPlayers }: Props) {
           <Text style={{fontSize: 12, fontWeight: "bold", color: "grey"}}>{player.team}</Text>
         </View>
         <View style={{alignItems: "center"}}>
-          <Text>{player.kd}</Text>
-          <Text>Rating: {player.rating}</Text>
+          <Text style={{color: "orange"}}>Rating: {player.rating}</Text>
+          <Text style={{color: "lightblue"}}>K/D: {player.kd}</Text>
         </View>
       </View>
     </View>
