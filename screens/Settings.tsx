@@ -38,7 +38,9 @@ export default function Settings( {hidden, setHidden}: Props) {
       />
       </View>
       <View>
-        <Text style={{backgroundColor: "#435971", padding: 10, color: "white", fontWeight: "bold"}}>Welcome back, {currentUser?.displayName}!</Text>
+        <Text style={{backgroundColor: "#435971", padding: 10, color: "white", fontWeight: "bold"}}>
+          {currentUser ? `Welcome back, ${currentUser.displayName}!` : "Sign in or create a new account!"}
+          </Text>
       </View>
       <View style={{backgroundColor: "#1b1f23", justifyContent: "center", alignItems: "center", padding: 15}}>
         {currentUser === null ? (

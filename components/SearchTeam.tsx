@@ -39,7 +39,7 @@ export default function SearchTeam({ team, backgroundColour }: Props) {
         <View style={{ flexDirection: "row" }}>
           {team.players.map((player) => (
             <>
-              <Text style={styles.text}>{player.nickname} ~</Text>
+              <Text style={styles.text}> ~ {player.nickname}</Text>
             </>
           ))}
         </View>
@@ -60,8 +60,6 @@ const styles = StyleSheet.create({
   image: {
     width: 50,
     height: 50,
-    borderRadius: 30,
-    backgroundColor: "#ffffb0"
   },
   text: {
     fontSize: 12,
