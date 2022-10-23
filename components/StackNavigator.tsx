@@ -29,6 +29,7 @@ import SearchTeams from "../screens/SearchTeams";
 import SearchPlayers from "../screens/SearchPlayers";
 import Login from "../screens/Login";
 import Signup from "../screens/Signup";
+import { auth } from '../firebase'
 
 type Props = {
   hidden: boolean;
@@ -48,7 +49,7 @@ export default function StackNavigator({
   const color = "white";
 
   return (
-    <Stack.Navigator initialRouteName="Login">
+    <Stack.Navigator initialRouteName={auth.currentUser ? "News" : "Login"}>
       <Stack.Screen 
       name="Login"
       component={Login}

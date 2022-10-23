@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, KeyboardAvoidingView, TextInput, TouchableOpacity } from 'react-native'
 import React, { useEffect } from 'react'
 import { auth } from '../firebase'
-import { useNavigation } from '@react-navigation/core'
+import { useNavigation } from '@react-navigation/native'
 
 
 
