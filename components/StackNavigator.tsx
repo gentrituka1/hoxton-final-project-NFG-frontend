@@ -49,7 +49,7 @@ export default function StackNavigator({
   const color = "white";
 
   return (
-    <Stack.Navigator initialRouteName={auth.currentUser ? "News" : "Login"}>
+    <Stack.Navigator initialRouteName={"Login"}>
       <Stack.Screen 
       name="Login"
       component={Login}
