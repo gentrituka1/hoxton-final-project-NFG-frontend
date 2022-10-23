@@ -38,23 +38,27 @@ export default function Settings( {hidden, setHidden}: Props) {
       />
       </View>
       <View>
-        <Text style={{backgroundColor: "#435971", padding: 10, color: "white", fontWeight: "bold"}}>Welcome {currentUser?.name}</Text>
+        <Text style={{backgroundColor: "#435971", padding: 10, color: "white", fontWeight: "bold"}}>Welcome back, {currentUser?.displayName}!</Text>
       </View>
       <View style={{backgroundColor: "#1b1f23", justifyContent: "center", alignItems: "center", padding: 15}}>
         {currentUser === null ? (
-        <Button
-          title="Log In/Sign Up"
-          color="#435971"
-          onPress={() => {
-            // @ts-ignore
-            navigation.navigate("Login");
-          }}
-        /> ) : (
-          <Button
-          title="Sign Out"
-          color="#435971"
-          onPress={signOut}
-        /> 
+            <Button
+              title="Log In/Sign Up"
+              color="#435971"
+              onPress={() => {
+                // @ts-ignore
+                navigation.navigate("Login");
+              }}
+            /> 
+        ) : (
+          <>
+            <Text style={{paddingBottom: 10, color: "lightblue"}}>You are signed in.</Text>
+            <Button
+            title="Sign Out"
+            color="#435971"
+            onPress={signOut}
+            /> 
+          </>
         )}
       </View>
     </View>

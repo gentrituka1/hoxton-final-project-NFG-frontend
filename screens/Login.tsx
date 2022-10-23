@@ -33,6 +33,9 @@ const Login = () => {
             // @ts-ignore
              alert(error.message)
         )
+
+        // @ts-ignore
+        navigation.navigate('News')
     }
 
   return (
